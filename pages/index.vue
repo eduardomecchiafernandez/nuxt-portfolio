@@ -126,7 +126,8 @@ export default {
                     "Small application built over the course of a weekend with Electron for the first HR test of my life",
                     "assets/images/brands/sellouter.webp",
                     "https://sellouter.it",
-                    "https://sellouter.it"
+                    "https://sellouter.it",
+                    false
                 ),
                 new Brand(
                     "Octostar",

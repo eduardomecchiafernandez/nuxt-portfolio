@@ -34,9 +34,9 @@
         border-radius: 12px;
 
         img {
-            height: 60px;
+            height: 90px;
             width: auto;
-            max-width: 120px;
+            max-width: 150px;
             object-fit: contain;
         }
 
@@ -47,6 +47,11 @@
         &--white-bg {
             background-color: white;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+            img {
+                height: 60px;
+                max-width: 120px;
+            }
 
             &:hover {
                 box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
