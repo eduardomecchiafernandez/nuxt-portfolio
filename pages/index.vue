@@ -65,7 +65,7 @@
                 </section>
             </main>
 
-            <StandardFooter />
+            <Footer />
         </div>
     </div>
 </template>
