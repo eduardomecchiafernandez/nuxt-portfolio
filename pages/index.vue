@@ -124,7 +124,7 @@ export default {
                 new Brand(
                     "Sellouter",
                     "Small application built over the course of a weekend with Electron for the first HR test of my life",
-                    "assets/images/brands/sellouter.jpg",
+                    "assets/images/brands/sellouter.webp",
                     "https://sellouter.it",
                     "https://sellouter.it"
                 ),
