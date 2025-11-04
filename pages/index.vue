@@ -322,6 +322,7 @@ export default {
             position: relative;
             margin-top: 40px;
             padding: 20px 0;
+            perspective: 1500px;
 
             &::before,
             &::after {
@@ -373,6 +374,7 @@ export default {
                 justify-content: space-evenly;
                 align-items: flex-start;
                 margin-top: 20px;
+                perspective: 1500px;
                 
                 @media screen and (max-width: 768px) {
                     & {

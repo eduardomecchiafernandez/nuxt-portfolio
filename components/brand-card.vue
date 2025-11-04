@@ -29,19 +29,22 @@
         justify-content: center;
         padding: 25px;
         margin: 0 15px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transition: transform 0.6s ease, box-shadow 0.3s ease;
         flex-shrink: 0;
         border-radius: 12px;
+        transform-style: preserve-3d;
+        perspective: 1000px;
 
         img {
             height: 90px;
             width: auto;
             max-width: 150px;
             object-fit: contain;
+            backface-visibility: hidden;
         }
 
         &:hover {
-            transform: scale(1.1) translateY(-5px);
+            transform: scale(1.1) translateY(-5px) rotateY(360deg);
         }
 
         &--white-bg {
