@@ -22,7 +22,7 @@
         width: 100%;
         color: white;
         text-align: center;
-        background: linear-gradient(180deg,#0048c5b5 35%,#174596);;
+        background: linear-gradient(180deg, rgba(0, 72, 197, 0.71) 35%, #174596);
         display: flex;
         justify-content: center;
         align-items: center;

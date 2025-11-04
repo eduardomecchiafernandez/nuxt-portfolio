@@ -52,7 +52,7 @@
 <style lang="scss" scoped>
     .project-card {
         margin-bottom: 50px;
-        background-color: #0d73d3cc;
+        background: linear-gradient(180deg, rgba(0, 72, 197, 0.71) 35%, #174596);
         border-radius: 5px;
         padding: 30px;
         max-width: 350px;
