@@ -11,7 +11,7 @@
                 <About class="home__section" />
 
                 <!-- Brands section -->
-                <section class="brands_section" id="brands">
+                <section class="home__section brands_section" id="brands">
                     <Heading text="Brands"></Heading>
 
                     <p>This is a pretty detailed list of the brands I've worked with during my career up until now.</p>
@@ -25,7 +25,7 @@
                 </section>
 
                 <!-- Projects section -->
-                <section class="project_section" id="projects">
+                <section class="home__section project_section" id="projects">
                     <Heading text="Projects"></Heading>
 
                     <p>Unfortunately, most of the projects I've worked on during my career are covered by non-disclosure agreements. Here are some <b>VERY</b> old samples.</p>
@@ -36,7 +36,7 @@
                 </section>
 
                 <!-- Contact section -->
-                <section class="home__section" id="contact">
+                <section class="home__section contact_section" id="contact">
                     <Heading text="Contact me"></Heading>
 
                     <div class="home__section__content contact__content">
@@ -268,11 +268,18 @@ export default {
         }
 
         &__section {
-            margin-top: 45vh;
+            margin-top: 150px;
+            margin-bottom: 80px;
+
+            @media screen and (max-width: 768px) {
+                margin-top: 100px;
+                margin-bottom: 60px;
+            }
 
             p {
                 text-align: center;
-                margin-bottom: 48px;
+                margin-bottom: 30px;
+                margin-top: 20px;
             }
         }
 
@@ -287,7 +294,9 @@ export default {
                 }
     
                 .social-media {
-                    margin-bottom: 50px;
+                    margin-top: 60px;
+                    margin-bottom: 60px;
+                    list-style: none;
 
                     li:first-child {
                         margin-bottom: 30px;
@@ -303,9 +312,6 @@ export default {
                             width: 32px;
                         }
                     }
-                    
-                    margin-top: 50px;
-                    list-style: none;
 
                     #github {
                         img {
@@ -320,7 +326,7 @@ export default {
             width: 100%;
             overflow: hidden;
             position: relative;
-            margin-top: 40px;
+            margin-top: 20px;
             padding: 20px 0;
             perspective: 1500px;
 
@@ -374,11 +380,13 @@ export default {
                 justify-content: space-evenly;
                 align-items: flex-start;
                 margin-top: 20px;
+                gap: 30px;
                 perspective: 1500px;
                 
                 @media screen and (max-width: 768px) {
                     & {
                         padding: 20px;
+                        gap: 20px;
                     }
                 }
             }
