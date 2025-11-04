@@ -25,7 +25,7 @@
                 <section class="project_section" id="projects">
                     <Heading text="Projects"></Heading>
 
-                    <p>Unfortunately, most of the projects I've worked on during my career are covered by non-disclosure agreements. Here are some VERY old samples.</p>
+                    <p>Unfortunately, most of the projects I've worked on during my career are covered by non-disclosure agreements. Here are some <b>VERY</b> old samples.</p>
 
                     <div class="project_section__content projects__content">
                         <ProjectCard v-for="(project, index) in projects" :key="index" :project="project"/>
