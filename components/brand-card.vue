@@ -3,8 +3,8 @@
         <a :href="brand.website" target="_blank">
             <b-img 
                 fluid 
-                :src="require('~/assets/images/brands/' + brand.image)" 
-                :alt="'Brand image for ' + brand.name"```
+                :src="require('~/' + brand.image)" 
+                :alt="'Brand image for ' + brand.name"
                 rounded="true"
                 thumbnail
                 width="500"

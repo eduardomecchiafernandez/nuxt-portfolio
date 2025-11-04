@@ -78,49 +78,49 @@ export default {
                 new Brand(
                     "IndieGala",
                     "Small application built over the course of a weekend with Electron for the first HR test of my life",
-                    "./assets/images/brands/indiegala.png",
+                    "assets/images/brands/indiegala.png",
                     "https://indiegala.com",
                     "https://indiegala.com"
                 ),
                 new Brand(
                     "Accenture",
                     "Small application built over the course of a weekend with Electron for the first HR test of my life",
-                    "./assets/svg/accenture.svg",
+                    "assets/svg/brands/accenture.svg",
                     "https://accenture.com",
                     "https://accenture.com"
                 ),
                 new Brand(
                     "Prada",
                     "Small application built over the course of a weekend with Electron for the first HR test of my life",
-                    "./assets/svg/prada.svg",
+                    "assets/svg/brands/prada.svg",
                     "https://prada.com",
                     "https://prada.com"
                 ),
                 new Brand(
                     "ALTEN",
                     "Small application built over the course of a weekend with Electron for the first HR test of my life",
-                    "./assets/svg/alten.svg",
+                    "assets/svg/brands/ALTEN.svg",
                     "https://altem.com",
                     "https://altem.com"
                 ),
                 new Brand(
                     "Aruba",
                     "Small application built over the course of a weekend with Electron for the first HR test of my life",
-                    "./assets/svg/aruba-it.svg",
+                    "assets/svg/brands/aruba-it.svg",
                     "https://aruba.it",
                     "https://aruba.it"
                 ),
                 new Brand(
                     "Business Integration Partners",
                     "Small application built over the course of a weekend with Electron for the first HR test of my life",
-                    "./assets/images/bip.jpg",
+                    "assets/images/brands/bip.jpg",
                     "https://bip.it",
                     "https://bip.it"
                 ),
                 new Brand(
                     "Octostar",
                     "Small application built over the course of a weekend with Electron for the first HR test of my life",
-                    "./assets/images/octostar.jpg",
+                    "assets/images/brands/octostar.jpg",
                     "https://octostar.com",
                     "https://octostar.com"
                 ),
