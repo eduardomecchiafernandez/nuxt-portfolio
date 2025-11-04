@@ -195,7 +195,8 @@ export default {
         matrix = matrix.split("");
 
         const fontSize = 16;
-        const columns = matrixCanvas.width / fontSize; //number of columns for the rain
+        const columnWidth = 12; // narrower column width for slimmer appearance
+        const columns = matrixCanvas.width / columnWidth; //number of columns for the rain
 
         // an array of drops - one per column
         const drops = [];
@@ -221,8 +222,8 @@ export default {
                 // a random character to print
                 const text = matrix[Math.floor(Math.random() * matrix.length)];
 
-                // x = i*font_size, y = value of drops[i]*font_size
-                context.fillText(text, i * fontSize, drops[i] * fontSize);
+                // x = i*columnWidth, y = value of drops[i]*fontSize
+                context.fillText(text, i * columnWidth, drops[i] * fontSize);
 
                 // sending the drop back to the top randomly after it has crossed the screen
                 // adding a randomness to the reset to make the drops scattered on the Y axis
