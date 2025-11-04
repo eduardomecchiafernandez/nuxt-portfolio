@@ -45,7 +45,6 @@
     .brand {
         margin-bottom: 50px;
         background-color: #0d74d3;
-        opacity: 0.6;
         border-radius: 5px;
         padding: 30px;
         max-width: 350px;
