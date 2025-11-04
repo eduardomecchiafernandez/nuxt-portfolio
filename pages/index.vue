@@ -56,7 +56,7 @@
                             <li class="social-media-icon" id="linkedin"><a href="https://linkedin.com/in/eduardomecchiafernandez"><img src="~/assets/svg/linkedin.svg"></a></li>
                             <li class="social-media-icon" id="instagram"><a href="https://instagram.com/eduardomecchiafernandez"><img src="~/assets/svg/instagram.svg"></a></li>
                             <li class="social-media-icon" id="github"><a href="https://github.com/eduardomecchiafernandez"><img src="~/assets/svg/github.svg"></a></li>
-                            <li class="social-media-icon" id="twitter"><a href="https://twitter.com/eduardomecchiaf"><img src="~/assets/svg/twitter.svg"></a></li>
+                            <li class="social-media-icon" id="twitter"><a href="https://twitter.com/eduardomecchiaf"><img src="~/assets/svg/x.svg"></a></li>
                         </ul>
                     </div>
                 </section>
