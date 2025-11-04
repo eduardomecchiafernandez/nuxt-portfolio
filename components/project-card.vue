@@ -57,7 +57,7 @@
         padding: 30px;
         max-width: 350px;
         color: #a6e6ff;
-        transition: transform 0.6s ease, box-shadow 0.3s ease;
+        transition: transform 0.8s ease, box-shadow 0.3s ease;
         transform-style: preserve-3d;
         backface-visibility: hidden;
 
@@ -71,7 +71,7 @@
         }
 
         &:hover {
-            transform: rotateY(360deg);
+            transform: rotateY(180deg);
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
         }
     }

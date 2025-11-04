@@ -29,7 +29,7 @@
         justify-content: center;
         padding: 25px;
         margin: 0 15px;
-        transition: transform 0.6s ease, box-shadow 0.3s ease;
+        transition: transform 0.8s ease, box-shadow 0.3s ease;
         flex-shrink: 0;
         border-radius: 12px;
         transform-style: preserve-3d;
@@ -44,7 +44,7 @@
         }
 
         &:hover {
-            transform: scale(1.1) translateY(-5px) rotateY(360deg);
+            transform: scale(1.1) translateY(-5px) rotateY(180deg);
         }
 
         &--white-bg {
