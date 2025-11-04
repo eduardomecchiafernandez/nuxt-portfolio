@@ -16,8 +16,11 @@
 
                     <p>This is a pretty detailed list of the brands I've worked with during my career up until now.</p>
 
-                    <div class="brands_section__content brands__content">
-                        <BrandCard v-for="(brand, index) in brands" :key="index" :brand="brand"/>
+                    <div class="brands-slider">
+                        <div class="brands-track">
+                            <BrandCard v-for="(brand, index) in brands" :key="index" :brand="brand"/>
+                            <BrandCard v-for="(brand, index) in brands" :key="'duplicate-' + index" :brand="brand"/>
+                        </div>
                     </div>
                 </section>
 
@@ -115,7 +118,15 @@ export default {
                     "Small application built over the course of a weekend with Electron for the first HR test of my life",
                     "assets/images/brands/bip.jpg",
                     "https://bip.it",
-                    "https://bip.it"
+                    "https://bip.it",
+                    false
+                ),
+                new Brand(
+                    "Sellouter",
+                    "Small application built over the course of a weekend with Electron for the first HR test of my life",
+                    "assets/images/brands/sellouter.jpg",
+                    "https://sellouter.it",
+                    "https://sellouter.it"
                 ),
                 new Brand(
                     "Octostar",
@@ -255,8 +266,6 @@ export default {
             font-weight: bolder;
         }
 
-        &__cta { }
-
         &__section {
             margin-top: 45vh;
 
@@ -306,20 +315,52 @@ export default {
             }
         }
 
-        .brands {
-            &__content {
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: space-evenly;
-                align-items: flex-start;
-                margin-top: 20px;
-                
-                @media screen and (max-width: 768px) {
-                    & {
-                        padding: 20px;
-                    }
-                }
+        .brands-slider {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            margin-top: 40px;
+            padding: 20px 0;
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                width: 100px;
+                height: 100%;
+                z-index: 2;
+                pointer-events: none;
+            }
+
+            &::before {
+                left: 0;
+                background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent);
+            }
+
+            &::after {
+                right: 0;
+                background: linear-gradient(to left, rgba(0, 0, 0, 0.8), transparent);
+            }
+        }
+
+        .brands-track {
+            display: flex;
+            align-items: center;
+            animation: slide 40s linear infinite;
+            width: fit-content;
+
+            &:hover {
+                animation-play-state: paused;
+            }
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
             }
         }
 

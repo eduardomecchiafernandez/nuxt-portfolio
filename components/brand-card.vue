@@ -1,29 +1,10 @@
 <template>
-    <div class="brand">
-        <a :href="brand.website" target="_blank">
-            <b-img 
-                fluid 
-                :src="require('~/' + brand.image)" 
-                :alt="'Brand image for ' + brand.name"
-                rounded="true"
-                thumbnail
-                width="500"
-                center
-            ></b-img>
-        </a>
-
-        <div class="brand__title">
-            <b>Title:&nbsp;</b> <span>{{ brand.name }}</span>
-        </div>
-
-        <div>
-            <b>Description:&nbsp;</b> <span>{{ brand.description }}</span>
-        </div>
-
-        <div>
-            <b>Link:&nbsp;</b> <a :href="brand.website" target="_blank">Click here</a>
-        </div>
-    </div>
+    <a :href="brand.website" target="_blank" :class="['brand-icon', { 'brand-icon--white-bg': brand.needsWhiteBackground }]" :title="brand.name">
+        <img 
+            :src="require('~/' + brand.image)" 
+            :alt="brand.name"
+        />
+    </a>
 </template>
 
 <script>
@@ -42,34 +23,34 @@
 </script>
 
 <style lang="scss" scoped>
-    .brand {
-        margin-bottom: 50px;
-        background-color: #0d73d3cc;
-        border-radius: 5px;
-        padding: 30px;
-        max-width: 350px;
-        color: #a6e6ff;
+    .brand-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 25px;
+        margin: 0 15px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        flex-shrink: 0;
+        border-radius: 12px;
 
-        ul {
-            list-style: none;
-            padding: 0;
+        img {
+            height: 60px;
+            width: auto;
+            max-width: 120px;
+            object-fit: contain;
         }
-    
-        &__title {
-            margin-top: 30px;
+
+        &:hover {
+            transform: scale(1.1) translateY(-5px);
         }
-    }
 
-    span, li {
-        color: white;
-    }
+        &--white-bg {
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 
-    a {
-        font-weight: bold;
-        color: white;
-    }
-
-    b {
-        color: #a6e6ff;
+            &:hover {
+                box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+            }
+        }
     }
 </style>
