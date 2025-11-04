@@ -8,11 +8,6 @@
             <a href="https://nuxtjs.org/" target="_blank">
                 <img src="nuxt.ico" alt="Icon of Nuxt.js framework" width="25" height="25">
             </a>
-
-            <!-- Second instance of social media component -->
-           <!--  <ul>
-                <li>ROW OF SOCIAL MEDIA ICONS</li>
-            </ul> -->
         </div>
     </footer>
 </template>
