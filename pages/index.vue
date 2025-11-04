@@ -85,42 +85,42 @@ export default {
                 new Brand(
                     "Accenture",
                     "Small application built over the course of a weekend with Electron for the first HR test of my life",
-                    "accenture.png",
+                    "accenture.svg",
                     "https://accenture.com",
                     "https://accenture.com"
                 ),
                 new Brand(
                     "Prada",
                     "Small application built over the course of a weekend with Electron for the first HR test of my life",
-                    "prada.png",
+                    "prada.svg",
                     "https://prada.com",
                     "https://prada.com"
                 ),
                 new Brand(
                     "ALTEN",
                     "Small application built over the course of a weekend with Electron for the first HR test of my life",
-                    "altem.png",
+                    "alten.svg",
                     "https://altem.com",
                     "https://altem.com"
                 ),
                 new Brand(
                     "Aruba",
                     "Small application built over the course of a weekend with Electron for the first HR test of my life",
-                    "aruba.png",
+                    "aruba-it.svg",
                     "https://aruba.it",
                     "https://aruba.it"
                 ),
                 new Brand(
                     "Business Integration Partners",
                     "Small application built over the course of a weekend with Electron for the first HR test of my life",
-                    "bip.png",
+                    "bip.jpg",
                     "https://bip.it",
                     "https://bip.it"
                 ),
                 new Brand(
                     "Octostar",
                     "Small application built over the course of a weekend with Electron for the first HR test of my life",
-                    "octostar.png",
+                    "octostar.jpg",
                     "https://octostar.com",
                     "https://octostar.com"
                 ),
