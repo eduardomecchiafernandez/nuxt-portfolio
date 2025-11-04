@@ -102,6 +102,12 @@
                 img {
                     max-width: 450px;
                     border: 10px solid #0048c5b5;
+                    transition: transform 0.3s ease;
+                    cursor: pointer;
+
+                    &:hover {
+                        transform: scale(1.05);
+                    }
 
                     @media screen and (max-width: 768px) {
                     & {

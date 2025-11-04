@@ -306,11 +306,17 @@ export default {
                     li:not(:first-child) {
                         display: inline-block;
                         margin: 0 10px;
+                        transition: transform 0.3s ease;
+                        cursor: pointer;
                         
                         img {
                             color: white;
                             height: 32px;
                             width: 32px;
+                        }
+
+                        &:hover {
+                            transform: scale(1.3);
                         }
                     }
 
