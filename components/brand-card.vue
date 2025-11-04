@@ -30,7 +30,7 @@
     import Brand from './models/Brand';
 
     export default {
-        name: 'Brand',
+        name: 'BrandCard',
 
         props: {
             brand: {

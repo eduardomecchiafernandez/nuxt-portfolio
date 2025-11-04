@@ -6,4 +6,5 @@ export default class Brand {
         this.url = url;
         this.website = website;
     }
+
 }

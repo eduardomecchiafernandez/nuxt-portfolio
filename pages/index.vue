@@ -17,7 +17,7 @@
                     <p>This is a pretty detailed list of the brands I've worked with during my career up until now.</p>
 
                     <div class="brands_section__content brands__content">
-                        <Brand v-for="(brand, index) in brands" :key="index" :brand="brand"/>
+                        <BrandCard v-for="(brand, index) in brands" :key="index" :brand="brand"/>
                     </div>
                 </section>
 
@@ -81,6 +81,48 @@ export default {
                     "indiegala.png",
                     "https://indiegala.com",
                     "https://indiegala.com"
+                ),
+                new Brand(
+                    "Accenture",
+                    "Small application built over the course of a weekend with Electron for the first HR test of my life",
+                    "accenture.png",
+                    "https://accenture.com",
+                    "https://accenture.com"
+                ),
+                new Brand(
+                    "Prada",
+                    "Small application built over the course of a weekend with Electron for the first HR test of my life",
+                    "prada.png",
+                    "https://prada.com",
+                    "https://prada.com"
+                ),
+                new Brand(
+                    "ALTEN",
+                    "Small application built over the course of a weekend with Electron for the first HR test of my life",
+                    "altem.png",
+                    "https://altem.com",
+                    "https://altem.com"
+                ),
+                new Brand(
+                    "Aruba",
+                    "Small application built over the course of a weekend with Electron for the first HR test of my life",
+                    "aruba.png",
+                    "https://aruba.it",
+                    "https://aruba.it"
+                ),
+                new Brand(
+                    "Business Integration Partners",
+                    "Small application built over the course of a weekend with Electron for the first HR test of my life",
+                    "bip.png",
+                    "https://bip.it",
+                    "https://bip.it"
+                ),
+                new Brand(
+                    "Octostar",
+                    "Small application built over the course of a weekend with Electron for the first HR test of my life",
+                    "octostar.png",
+                    "https://octostar.com",
+                    "https://octostar.com"
                 ),
             ],
             projects: [
@@ -259,6 +301,23 @@ export default {
                         img {
                             filter: invert(100%);
                         }
+                    }
+                }
+            }
+        }
+
+        .brands {
+            &__content {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                align-items: flex-start;
+                margin-top: 20px;
+                
+                @media screen and (max-width: 768px) {
+                    & {
+                        padding: 20px;
                     }
                 }
             }
