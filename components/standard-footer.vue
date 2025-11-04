@@ -1,6 +1,6 @@
 <template>
     <footer>
-        <div>&copy;2024 Eduardo Mecchia</div>
+        <div>&copy;2025 Eduardo Mecchia</div>
     
         <div>
             <span>Built using Nuxt.js</span>
