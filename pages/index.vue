@@ -50,7 +50,7 @@
                             pill
                             variant="primary"
                             href="mailto:eduardo.mecchia.dev@gmail.com"
-                        >Send Mail</b-button>
+                        >Send mail</b-button>
 
                         <ul class="social-media">
                             <li>You can reach me through social media, too!</li>
