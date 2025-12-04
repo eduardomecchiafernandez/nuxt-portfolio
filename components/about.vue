@@ -16,7 +16,7 @@
                 </p>
 
                 <p>
-                    Music is another passion of mine, you can check out my <a href="https://last.fm/user/eduardomecchia" target="_blank">Last.fm profile</a> to see what I love or what I'm listening to.
+                    Music is another passion of mine, you can check out my <a href="https://last.fm/user/eduardomecchiaf" target="_blank">Last.fm profile</a> to see what I love or what I'm listening to.
                 </p>
             </div>
 
