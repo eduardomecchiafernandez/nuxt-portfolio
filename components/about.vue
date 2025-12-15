@@ -26,7 +26,7 @@
                     src="~/assets/images/playa-tora-paguera.png"
                     class="shadow-lg rounded-lg"
                     fluid
-                    alt="Photo of Eduardo Mecchia looking at the ocean in Playa Tora, Paguera, Mallorca."
+                    alt="Photo of Eduardo Mecchia Fernandez looking at the ocean in Playa Tora, Paguera, Mallorca."
                 ></b-img>
             </figure>
         </article>

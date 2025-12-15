@@ -59,7 +59,7 @@
                             <li class="social-media-icon" id="linkedin"><a href="https://linkedin.com/in/eduardomecchiafernandez"><img src="~/assets/svg/linkedin.svg"></a></li>
                             <li class="social-media-icon" id="instagram"><a href="https://instagram.com/eduardomecchiafernandez"><img src="~/assets/svg/instagram.svg"></a></li>
                             <li class="social-media-icon" id="github"><a href="https://github.com/eduardomecchiafernandez"><img src="~/assets/svg/github.svg"></a></li>
-                            <li class="social-media-icon" id="twitter"><a href="https://twitter.com/eduardomecchiaf"><img src="~/assets/svg/x.svg"></a></li>
+                            <li class="social-media-icon" id="twitter"><a href="https://twitter.com/eduardomecchiafernandez"><img src="~/assets/svg/x.svg"></a></li>
                         </ul>
                     </div>
                 </section>
@@ -144,16 +144,16 @@ export default {
                     "guess-the-number.png",
                     "https://drive.google.com/file/d/1USGqq7_gAJyrzaA-ZlHqvfnMFe_EG9gd/view?usp=sharing",
                     ["HTML", "CSS", "Electron"],
-                    "https://github.com/eduardomecchia/guess-the-number"
+                    "https://github.com/eduardomecchiafernandez/guess-the-number"
                 ),
 
                 new Project(
                     "Eduardo's Task Tracker",
                     "A responsive single page application built with Vue.js to familiarize myself with Vue CLI and keep track of what I have to watch/read/etc.",
                     "task-tracker.png",
-                    "https://eduardomecchia.github.io/todos/",
+                    "https://eduardomecchiafernandez.github.io/todos/",
                     ["HTML", "CSS", "Vue.js"],
-                    "https://github.com/eduardomecchia/todos"
+                    "https://github.com/eduardomecchiafernandez/todos"
                 ),
 
                 new Project(
@@ -162,7 +162,7 @@ export default {
                     "boolflix.jpg",
                     "https://edu-boolflix.netlify.app/",
                     ["HTML", "CSS", "Vue.js"],
-                    "https://github.com/eduardomecchia/vue-boolflix"
+                    "https://github.com/eduardomecchiafernandez/vue-boolflix"
                 ),
 
                 new Project(
@@ -171,7 +171,7 @@ export default {
                     "boolzapp.jpg",
                     "https://edu-boolzapp.netlify.app/",
                     ["HTML", "CSS", "Vue.js"],
-                    "https://github.com/eduardomecchia/vue-boolzapp"
+                    "https://github.com/eduardomecchiafernandez/vue-boolzapp"
                 )
             ]
         };
