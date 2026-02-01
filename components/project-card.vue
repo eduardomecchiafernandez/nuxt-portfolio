@@ -1,5 +1,10 @@
 <template>
-    <div class="project-card">
+    <div 
+        class="project-card"
+        @mousemove="onMouseMove"
+        @mouseleave="onMouseLeave"
+        :style="cardStyle"
+    >
         <a :href="project.url" target="_blank" class="project-card__image-link">
             <div class="project-card__image-wrapper">
                 <b-img 
@@ -52,6 +57,51 @@
                 type: Project,
                 required: true
             }
+        },
+
+        data() {
+            return {
+                rotateX: 0,
+                rotateY: 0,
+                isHovering: false
+            }
+        },
+
+        computed: {
+            cardStyle() {
+                if (!this.isHovering) {
+                    return {
+                        transform: 'perspective(1000px) rotateX(0deg) rotateY(0deg)',
+                        transition: 'transform 0.5s ease-out'
+                    }
+                }
+                return {
+                    transform: `perspective(1000px) rotateX(${this.rotateX}deg) rotateY(${this.rotateY}deg) translateZ(10px)`,
+                    transition: 'transform 0.1s ease-out'
+                }
+            }
+        },
+
+        methods: {
+            onMouseMove(e) {
+                this.isHovering = true;
+                const card = e.currentTarget;
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                // Calculate rotation (max 8 degrees)
+                this.rotateY = ((x - centerX) / centerX) * 8;
+                this.rotateX = ((centerY - y) / centerY) * 8;
+            },
+
+            onMouseLeave() {
+                this.isHovering = false;
+                this.rotateX = 0;
+                this.rotateY = 0;
+            }
         }
     }
 </script>
@@ -66,14 +116,14 @@
         overflow: hidden;
         max-width: 380px;
         width: 100%;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        transform-style: preserve-3d;
+        will-change: transform;
         
         &:hover {
-            transform: translateY(-8px);
-            border-color: rgba(0, 102, 255, 0.3);
+            border-color: rgba(139, 92, 246, 0.4);
             box-shadow: 
-                0 20px 60px rgba(0, 0, 0, 0.4),
-                0 0 40px rgba(0, 102, 255, 0.15),
+                0 25px 50px rgba(0, 0, 0, 0.5),
+                0 0 60px rgba(139, 92, 246, 0.2),
                 inset 0 1px 0 rgba(255, 255, 255, 0.1);
 
             .project-card__image-overlay {
