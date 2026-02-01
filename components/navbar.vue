@@ -3,7 +3,6 @@
         <div class="navbar__container">
             <a href="#" class="navbar__logo" @click.prevent="scrollToTop">
                 <span class="logo-text">Eduardo</span>
-                <span class="logo-dot">.</span>
             </a>
 
             <button class="navbar__toggle" @click="toggleMenu" :class="{ 'active': isMenuOpen }" aria-label="Toggle menu">
@@ -89,25 +88,22 @@ export default {
         text-decoration: none;
         display: flex;
         align-items: center;
-        gap: 2px;
+        margin-right: 40px;
 
         .logo-text {
             font-family: var(--font-heading);
-            font-size: 26px;
-            font-weight: 700;
+            font-size: 22px;
+            font-weight: 600;
             color: white;
-            transition: opacity 0.3s ease;
-        }
-
-        .logo-dot {
-            font-family: var(--font-heading);
-            font-size: 30px;
-            font-weight: 700;
-            color: #0066ff;
+            padding: 6px 14px;
+            border: 2px solid #8b5cf6;
+            border-radius: 8px;
+            transition: all 0.3s ease;
         }
 
         &:hover .logo-text {
-            opacity: 0.8;
+            background: rgba(139, 92, 246, 0.1);
+            border-color: #a78bfa;
         }
     }
 

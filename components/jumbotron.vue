@@ -4,10 +4,10 @@
             <p class="jumbotron__greeting">Hello, I'm</p>
             <h1 class="jumbotron__name">Eduardo<span class="accent">.</span><span class="jumbotron__surname">Mecchia Fernandez</span></h1>
             <h2 class="jumbotron__title">
-                A <strong class="gradient-text">full stack web developer</strong>
+                A <strong class="gradient-text">Full Stack Software Engineer</strong>
             </h2>
             <p class="jumbotron__description">
-                Passionate about crafting fast, accessible, and intuitive web experiences using modern technologies and best practices.
+                passionate about crafting fast, accessible, and intuitive web experiences using modern technologies and best practices.
             </p>
 
             <div class="jumbotron__actions">
@@ -99,14 +99,14 @@
 
         &__surname {
             display: block;
-            font-size: 32px;
-            font-weight: 500;
-            color: rgba(255, 255, 255, 0.6);
-            letter-spacing: 0.02em;
-            margin-top: 8px;
+            font-size: 24px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 0.03em;
+            margin-top: 6px;
 
             @media screen and (max-width: 768px) {
-                font-size: 24px;
+                font-size: 18px;
             }
         }
 

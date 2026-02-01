@@ -3,7 +3,7 @@
         <div class="footer__content">
             <div class="footer__brand">
                 <span class="footer__logo">Eduardo</span>
-                <span class="footer__tagline">Full Stack Developer</span>
+                <span class="footer__tagline">Software Engineer</span>
             </div>
 
             <div class="footer__links">
