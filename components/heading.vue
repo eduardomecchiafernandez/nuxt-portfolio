@@ -23,8 +23,15 @@
         
         h2 {
             text-align: center;
-            font-weight: bold;
-            font-size: 40px;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 42px;
+            color: white;
+            letter-spacing: -0.02em;
+
+            @media screen and (max-width: 768px) {
+                font-size: 32px;
+            }
         }
     }
 </style>

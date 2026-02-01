@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Eduardo Mecchia: Web Developer',
+    title: 'Eduardo M.F. | Software Engineer',
     htmlAttrs: {
       lang: 'en'
     },
@@ -15,7 +15,10 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+      { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: true },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap' }
     ]
   },
 
@@ -35,6 +38,12 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ['bootstrap-vue/nuxt'],
+
+  // Bootstrap-Vue configuration
+  bootstrapVue: {
+    bootstrapCSS: true,
+    bootstrapVueCSS: true
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

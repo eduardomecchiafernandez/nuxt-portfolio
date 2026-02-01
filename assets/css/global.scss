@@ -1,24 +1,95 @@
+// Override Bootstrap's default body background - MUST come after Bootstrap imports
+html {
+    background-color: #000 !important;
+    background: #000 !important;
+}
+
+body {
+    background-color: transparent !important;
+    background: transparent !important;
+    // Override Bootstrap's default
+    background-image: none !important;
+}
+
+.app, 
+.app-wrapper,
+#__nuxt,
+#__layout,
+.nuxt-progress-bar,
+.jumbotron,
+.home,
+main {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+// CSS Variables for consistent theming
+:root {
+    --color-primary: #0066ff;
+    --color-primary-dark: #0048c5;
+    --color-accent-purple: #bd00c5;
+    --color-accent-cyan: #31ffff;
+    --color-bg-dark: #0a0a0f;
+    --color-glass: rgba(255, 255, 255, 0.05);
+    --color-glass-border: rgba(255, 255, 255, 0.1);
+    --color-text: #ffffff;
+    --color-text-muted: #a0a0b0;
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --glow-purple: 0 0 20px rgba(189, 0, 197, 0.4);
+    --glow-cyan: 0 0 20px rgba(49, 255, 255, 0.3);
+    --glow-blue: 0 0 30px rgba(0, 102, 255, 0.4);
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-size: 20px;
-    line-height: 1.5;
+    font-size: 18px;
+    line-height: 1.6;
+    font-family: var(--font-body);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+}
+
+// Glassmorphism utility
+.glass {
+    background: var(--color-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--color-glass-border);
+    border-radius: 16px;
+}
+
+.glass-strong {
+    background: rgba(10, 10, 20, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
 }
 
 // Helpers
 .scale-on-hover {
     transform: scale(1);
-    transition: transform .2s ease-in-out;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
 
     &:hover {
-        transform: scale(1.10);
+        transform: scale(1.05) translateY(-2px);
+        box-shadow: var(--glow-blue);
     }
 }
 
 .gradient-text {
-    background: linear-gradient(180deg, #bd00c5 20%, #31ffff);
+    background: linear-gradient(135deg, #bd00c5 0%, #8b5cf6 50%, #31ffff 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -27,19 +98,153 @@
     -webkit-font-smoothing: antialiased;
 }
 
+// Glow effects
+.glow-purple {
+    box-shadow: var(--glow-purple);
+}
+
+.glow-cyan {
+    box-shadow: var(--glow-cyan);
+}
+
+.glow-blue {
+    box-shadow: var(--glow-blue);
+}
+
+// Modern button styles
+.btn-modern {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 16px;
+    color: white;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 50%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 40px rgba(0, 102, 255, 0.4), 0 0 20px rgba(0, 102, 255, 0.3);
+        
+        &::before {
+            opacity: 1;
+        }
+    }
+
+    &:active {
+        transform: translateY(-1px);
+    }
+}
+
+// Scroll-triggered animations
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-scale {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &.visible {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+// Staggered animation delays for children
+@for $i from 1 through 10 {
+    .stagger-#{$i} {
+        transition-delay: #{$i * 0.1}s;
+    }
+}
+
 // Transitions and animations
 .slide-in-from-left {
-    animation: slide-in-from-left .7s ease-in-out;
+    animation: slide-in-from-left 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes slide-in-from-left {
     from {
         opacity: 0;
-        transform: translate(-100%);
+        transform: translateX(-60px);
     }
 
     to {
         opacity: 1;
-        transform: translate(0);
+        transform: translateX(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(0, 102, 255, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(0, 102, 255, 0.5);
+    }
+}
+
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+// Gradient border utility
+.gradient-border {
+    position: relative;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        inset: -3px;
+        background: linear-gradient(135deg, var(--color-accent-purple), var(--color-primary), var(--color-accent-cyan));
+        border-radius: inherit;
+        z-index: -1;
+        background-size: 200% 200%;
+        animation: gradient-shift 4s ease infinite;
     }
 }

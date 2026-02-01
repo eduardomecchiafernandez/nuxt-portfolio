@@ -1,0 +1,232 @@
+<template>
+    <nav :class="['navbar', { 'navbar--scrolled': isScrolled }]">
+        <div class="navbar__container">
+            <a href="#" class="navbar__logo" @click.prevent="scrollToTop">
+                <span class="logo-text">Eduardo</span>
+                <span class="logo-dot">.</span>
+            </a>
+
+            <button class="navbar__toggle" @click="toggleMenu" :class="{ 'active': isMenuOpen }" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul :class="['navbar__menu', { 'navbar__menu--open': isMenuOpen }]">
+                <li><a href="#about" @click="closeMenu">About</a></li>
+                <li><a href="#brands" @click="closeMenu">Brands</a></li>
+                <li><a href="#projects" @click="closeMenu">Projects</a></li>
+                <li><a href="#contact" class="navbar__cta" @click="closeMenu">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+</template>
+
+<script>
+export default {
+    name: 'Navbar',
+    data() {
+        return {
+            isScrolled: false,
+            isMenuOpen: false
+        }
+    },
+    mounted() {
+        window.addEventListener('scroll', this.handleScroll);
+    },
+    beforeDestroy() {
+        window.removeEventListener('scroll', this.handleScroll);
+    },
+    methods: {
+        handleScroll() {
+            this.isScrolled = window.scrollY > 50;
+        },
+        toggleMenu() {
+            this.isMenuOpen = !this.isMenuOpen;
+        },
+        closeMenu() {
+            this.isMenuOpen = false;
+        },
+        scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }
+}
+</script>
+
+<style lang="scss" scoped>
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 20px 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &--scrolled {
+        padding: 12px 0;
+        background: rgba(10, 10, 20, 0.85);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    &__container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media screen and (max-width: 768px) {
+            padding: 0 20px;
+        }
+    }
+
+    &__logo {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 2px;
+
+        .logo-text {
+            font-family: var(--font-heading);
+            font-size: 26px;
+            font-weight: 700;
+            color: white;
+            transition: opacity 0.3s ease;
+        }
+
+        .logo-dot {
+            font-family: var(--font-heading);
+            font-size: 30px;
+            font-weight: 700;
+            color: #0066ff;
+        }
+
+        &:hover .logo-text {
+            opacity: 0.8;
+        }
+    }
+
+    &__toggle {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 32px;
+        height: 32px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1001;
+
+        span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: white;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        &.active {
+            span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            span:nth-child(2) {
+                opacity: 0;
+            }
+            span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            display: flex;
+        }
+    }
+
+    &__menu {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -4px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: linear-gradient(90deg, #0066ff, #8b5cf6);
+                transition: width 0.3s ease;
+            }
+
+            &:hover {
+                color: white;
+
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 70%;
+            max-width: 300px;
+            height: 100vh;
+            flex-direction: column;
+            justify-content: center;
+            gap: 32px;
+            background: rgba(10, 10, 20, 0.98);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+            &--open {
+                right: 0;
+            }
+
+            li a {
+                font-size: 20px;
+            }
+        }
+    }
+
+    &__cta {
+        padding: 10px 24px !important;
+        background: linear-gradient(135deg, #0066ff 0%, #0048c5 100%);
+        border-radius: 50px;
+        color: white !important;
+        transition: all 0.3s ease !important;
+
+        &::after {
+            display: none !important;
+        }
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 102, 255, 0.4);
+        }
+    }
+}
+</style>

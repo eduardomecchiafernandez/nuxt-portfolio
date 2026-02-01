@@ -5,33 +5,34 @@
         <article>
             <div class="paragraph-container">
                 <p>
-                    I’m a {{ new Date().getFullYear() - 2001 }}-year-old <strong>software developer</strong> from Rome with
+                    I'm a {{ new Date().getFullYear() - 2001 }}-year-old <strong>software developer</strong> from Rome with
                     a strong passion for technology, psychology and neurosciences in general.
                 </p>
                 
                 <p>
                     I dove into <strong>web development</strong> {{ new Date().getFullYear() - 2021 }} years ago,
-                    dreaming to make people’s lives easier thanks to sophisticated and
+                    dreaming to make people's lives easier thanks to sophisticated and
                     <strong>user-friendly</strong> products.
                 </p>
 
                 <p>
-                    Music is another passion of mine, you can check out my <a href="https://last.fm/user/eduardomecchiaf" target="_blank">Last.fm profile</a> to see what I love or what I'm listening to.
+                    Music is another passion of mine, you can check out my <a href="https://last.fm/user/eduardomecchiaf" target="_blank" class="highlight-link">Last.fm profile</a> to see what I love or what I'm listening to.
                 </p>
             </div>
 
             <!-- Photo of me -->
-            <figure>
-                <b-img
-                    src="~/assets/images/playa-tora-paguera.png"
-                    class="shadow-lg rounded-lg"
-                    fluid
-                    alt="Photo of Eduardo Mecchia Fernandez looking at the ocean in Playa Tora, Paguera, Mallorca."
-                ></b-img>
+            <figure class="photo-wrapper">
+                <div class="photo-glow"></div>
+                <div class="photo-frame">
+                    <b-img
+                        src="~/assets/images/playa-tora-paguera.png"
+                        class="photo"
+                        fluid
+                        alt="Photo of Eduardo Mecchia Fernandez looking at the ocean in Playa Tora, Paguera, Mallorca."
+                    ></b-img>
+                </div>
             </figure>
         </article>
-
-        <!-- <div class="technologies">ROWS OF TECHNOLOGIES USED</div> -->
     </section>
 </template>
 
@@ -40,89 +41,156 @@
         padding: 20px;
 
         article {
-            margin-top: 20px;
+            margin-top: 30px;
             display: flex;
+            align-items: center;
+            gap: 40px;
 
             @media screen and (max-width: 900px) {
-                & {
-                    flex-direction: column;
-                    align-items: center;
-                }
+                flex-direction: column;
+                gap: 30px;
             }
 
             .paragraph-container {
-                width: 70%;
+                flex: 1;
                 padding: 20px;
-                padding-right: 40px;
                 text-align: center;
-                vertical-align: middle;
 
-                a {
-                    font-size: 25px;
+                p {
+                    font-size: 20px;
+                    color: rgba(255, 255, 255, 0.85);
+                    line-height: 1.8;
+                    margin-bottom: 20px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
                 }
 
-                p,
                 strong {
-                    font-size: 25px;
+                    font-size: 20px;
                     color: white;
-                    z-index: 10000000;
+                    font-weight: 600;
+                }
+
+                .highlight-link {
+                    font-size: 20px;
+                    color: #8b5cf6;
+                    text-decoration: none;
+                    font-weight: 600;
+                    position: relative;
+                    transition: all 0.3s ease;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: -2px;
+                        left: 0;
+                        width: 0;
+                        height: 2px;
+                        background: linear-gradient(90deg, #bd00c5, #31ffff);
+                        transition: width 0.3s ease;
+                    }
+
+                    &:hover {
+                        color: #a78bfa;
+
+                        &::after {
+                            width: 100%;
+                        }
+                    }
                 }
 
                 @media screen and (min-width: 1024px) {
-                    & {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                    }
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
                 }
                 
                 @media screen and (max-width: 768px) {
-                    & {
-                        margin-top: 50px;
-                        width: 100%;
-                        order: 2;
-                        padding: 0;
+                    margin-top: 30px;
+                    width: 100%;
+                    order: 2;
+                    padding: 0;
+
+                    p, strong, .highlight-link {
+                        font-size: 18px;
                     }
                 }
             }
 
-            figure {
+            .photo-wrapper {
+                position: relative;
+                flex-shrink: 0;
+
                 @media screen and (max-width: 768px) {
-                    & {
-                        width: 100%;
-                        order: 1;
-                    }
+                    order: 1;
                 }
+            }
 
-                width: 60%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+            .photo-glow {
+                position: absolute;
+                inset: -20px;
+                background: linear-gradient(135deg, 
+                    rgba(189, 0, 197, 0.3) 0%, 
+                    rgba(0, 102, 255, 0.3) 50%, 
+                    rgba(49, 255, 255, 0.2) 100%
+                );
+                border-radius: 24px;
+                filter: blur(30px);
+                opacity: 0.6;
+                transition: all 0.5s ease;
+                z-index: 0;
+            }
 
-                img {
-                    max-width: 450px;
-                    border: 10px solid #0048c5b5;
-                    transition: transform 0.3s ease;
-                    cursor: pointer;
+            .photo-frame {
+                position: relative;
+                z-index: 1;
+                padding: 4px;
+                background: linear-gradient(135deg, 
+                    #bd00c5 0%, 
+                    #0066ff 50%, 
+                    #31ffff 100%
+                );
+                background-size: 200% 200%;
+                border-radius: 20px;
+                animation: gradient-shift 4s ease infinite;
+                transition: all 0.4s ease;
 
-                    &:hover {
-                        transform: scale(1.05);
-                    }
+                .photo {
+                    display: block;
+                    max-width: 400px;
+                    border-radius: 16px;
+                    transition: transform 0.4s ease;
 
                     @media screen and (max-width: 768px) {
-                    & {
-                        max-width: 300px;
+                        max-width: 280px;
                     }
                 }
+            }
+
+            .photo-wrapper:hover {
+                .photo-glow {
+                    opacity: 0.8;
+                    filter: blur(40px);
+                }
+
+                .photo {
+                    transform: scale(1.02);
                 }
             }
         }
+    }
 
-        .technologies {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 50px 0;
+    @keyframes gradient-shift {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
         }
     }
 </style>
