@@ -1,0 +1,16 @@
+<!-- This hidden page helps Netlify detect the form during build -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Birthday RSVP Form</title>
+</head>
+<body>
+    <form name="birthday-rsvp" netlify netlify-honeypot="bot-field" hidden>
+        <input type="hidden" name="form-name" value="birthday-rsvp" />
+        <input type="text" name="bot-field" />
+        <input type="text" name="name" />
+        <input type="text" name="response" />
+        <input type="text" name="timestamp" />
+    </form>
+</body>
+</html>
