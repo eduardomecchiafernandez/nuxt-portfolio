@@ -5,8 +5,12 @@
         <article>
             <div class="paragraph-container">
                 <p>
-                    I'm a {{ new Date().getFullYear() - 2001 }}-year-old <strong>software developer</strong> from Rome with
+                    I'm a {{ new Date().getFullYear() - 2001 }}-year-old <strong>software engineer</strong> from Rome with
                     a strong passion for technology, psychology and neuroscience.
+                </p>
+
+                <p>
+                    I'm currently working as a <strong>Solution Engineer</strong> at <a href="https://octostar.com/" target="_blank" class="highlight-link">Octostar</a>, building the future of AI-powered investigation.
                 </p>
                 
                 <p>
