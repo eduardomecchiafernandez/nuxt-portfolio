@@ -18,15 +18,16 @@ export default {
         }
     },
     async mounted() {
-        // Dynamic import - only loads on client side
-        const THREE = await import('three');
-        this.THREE = THREE;
-
-        this.initThree();
-        this.createShapes();
-        this.animate();
-        window.addEventListener('resize', this.onResize);
-        window.addEventListener('mousemove', this.onMouseMove);
+        // Load Three.js from CDN to avoid bundling
+        await this.loadThreeJS();
+        
+        if (this.THREE) {
+            this.initThree();
+            this.createShapes();
+            this.animate();
+            window.addEventListener('resize', this.onResize);
+            window.addEventListener('mousemove', this.onMouseMove);
+        }
     },
     beforeDestroy() {
         window.removeEventListener('resize', this.onResize);
@@ -155,6 +156,30 @@ export default {
         onMouseMove(event) {
             this.mouseX = (event.clientX / window.innerWidth) * 2 - 1;
             this.mouseY = (event.clientY / window.innerHeight) * 2 - 1;
+        },
+
+        loadThreeJS() {
+            return new Promise((resolve, reject) => {
+                // Check if already loaded
+                if (window.THREE) {
+                    this.THREE = window.THREE;
+                    resolve();
+                    return;
+                }
+
+                const script = document.createElement('script');
+                script.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+                script.async = true;
+                script.onload = () => {
+                    this.THREE = window.THREE;
+                    resolve();
+                };
+                script.onerror = () => {
+                    console.error('Failed to load Three.js');
+                    reject(new Error('Failed to load Three.js'));
+                };
+                document.head.appendChild(script);
+            });
         }
     }
 }

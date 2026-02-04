@@ -64,16 +64,6 @@ export default {
     // Reduce memory usage during build
     parallel: false,
     cache: false,
-    hardSource: false,
-    // Exclude three.js from babel processing
-    babel: {
-      compact: false
-    },
-    extend(config, { isServer }) {
-      if (isServer) {
-        config.externals = config.externals || [];
-        config.externals.push('three');
-      }
-    }
+    hardSource: false
   }
 }
