@@ -165,7 +165,7 @@ export default {
                 new Project(
                     "Akuzaer",
                     "Dark, immersive portfolio for a sound engineer featuring audio player, music library, and contact form",
-                    "akuzaer.svg",
+                    "akuzaer.png",
                     "https://akuzaer.com/",
                     ["HTML", "SCSS", "JavaScript"],
                     "https://github.com/eduardomecchiafernandez/akuzaer"
@@ -174,7 +174,7 @@ export default {
                 new Project(
                     "Livia Regoli",
                     "Modern portfolio with 3D effects for an aspiring computer engineer, blending philosophy and technology",
-                    "liviaregoli.svg",
+                    "liviaregoli.png",
                     "https://liviaregoli.netlify.app/",
                     ["HTML", "SCSS", "JavaScript", "Three.js"],
                     "https://github.com/eduardomecchiafernandez/liviaregoli"
@@ -183,7 +183,7 @@ export default {
                 new Project(
                     "Cantata Anarchica",
                     "A tribute website for the self-organized gatherings where thousands sing Fabrizio De André's songs in public squares across Italy and beyond",
-                    "cantata-anarchica.svg",
+                    "cantata-anarchica.png",
                     "https://cantataanarchica.it/",
                     ["HTML", "SCSS", "JavaScript"],
                     "https://github.com/eduardomecchiafernandez/cantata-anarchica"
@@ -192,7 +192,7 @@ export default {
                 new Project(
                     "Birreria Marconi 2",
                     "Bilingual website for a cozy pub in Zagarolo, featuring gallery, reviews integration, and interactive map",
-                    "birreria-marconi.svg",
+                    "birreria-marconi.png",
                     "https://birreriamarconi2.it/",
                     ["HTML", "SCSS", "JavaScript"],
                     "https://github.com/eduardomecchiafernandez/birreria-marconi-2"
@@ -201,7 +201,7 @@ export default {
                 new Project(
                     "Peremptory Poetry",
                     "Minimalist landing page for a multilingual poetry project with newsletter integration",
-                    "peremptory-poetry.svg",
+                    "peremptory-poetry.png",
                     "https://www.peremptorypoetry.com/",
                     ["HTML", "CSS", "JavaScript"],
                     "https://github.com/eduardomecchiafernandez/peremptory-poetry"
@@ -567,10 +567,16 @@ export default {
                 grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
                 gap: 32px;
                 margin-top: 30px;
+                justify-items: center;
                 
                 @media screen and (max-width: 768px) {
                     grid-template-columns: 1fr;
                     gap: 24px;
+                }
+
+                @media screen and (max-width: 400px) {
+                    grid-template-columns: 1fr;
+                    padding: 0 10px;
                 }
             }
         }

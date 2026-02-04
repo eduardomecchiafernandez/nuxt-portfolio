@@ -118,6 +118,12 @@
         width: 100%;
         transform-style: preserve-3d;
         will-change: transform;
+        margin: 0 auto;
+
+        @media screen and (max-width: 400px) {
+            max-width: 100%;
+            border-radius: 16px;
+        }
         
         &:hover {
             border-color: rgba(139, 92, 246, 0.4);
