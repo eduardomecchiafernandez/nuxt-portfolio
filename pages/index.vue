@@ -67,7 +67,7 @@
                             </a>
 
                             <div class="contact__divider">
-                                <span>or connect on social</span>
+                                <span>or connect on social media</span>
                             </div>
 
                             <div class="social-media">
@@ -208,40 +208,40 @@ export default {
                 ),
 
                 new Project(
-                    "Boolflix",
-                    "Netflix-inspired movie database built with Vue.js",
-                    "boolflix.jpg",
-                    "https://edu-boolflix.netlify.app/",
-                    ["HTML", "CSS", "Vue.js"],
-                    "https://github.com/eduardomecchiafernandez/vue-boolflix"
-                ),
-
-                new Project(
-                    "Boolzapp",
-                    "Simple, interactive Vue replica of WhatsApp",
-                    "boolzapp.jpg",
-                    "https://edu-boolzapp.netlify.app/",
-                    ["HTML", "CSS", "Vue.js"],
-                    "https://github.com/eduardomecchiafernandez/vue-boolzapp"
-                ),
-
-                new Project(
-                    "Eduardo's Task Tracker",
-                    "A responsive single page application built with Vue.js to familiarize myself with Vue CLI",
-                    "task-tracker.png",
-                    "https://eduardomecchiafernandez.github.io/todos/",
-                    ["HTML", "CSS", "Vue.js"],
-                    "https://github.com/eduardomecchiafernandez/todos"
-                ),
-
-                new Project(
                     "Guess the Number",
                     "Desktop application built with Electron for an HR coding challenge",
                     "guess-the-number.png",
                     "https://drive.google.com/file/d/1USGqq7_gAJyrzaA-ZlHqvfnMFe_EG9gd/view?usp=sharing",
                     ["HTML", "CSS", "Electron"],
                     "https://github.com/eduardomecchiafernandez/guess-the-number"
-                )
+                ),
+
+                // new Project(
+                //     "Boolflix",
+                //     "Netflix-inspired movie database built with Vue.js",
+                //     "boolflix.jpg",
+                //     "https://edu-boolflix.netlify.app/",
+                //     ["HTML", "CSS", "Vue.js"],
+                //     "https://github.com/eduardomecchiafernandez/vue-boolflix"
+                // ),
+
+                // new Project(
+                //     "Boolzapp",
+                //     "Simple, interactive Vue replica of WhatsApp",
+                //     "boolzapp.jpg",
+                //     "https://edu-boolzapp.netlify.app/",
+                //     ["HTML", "CSS", "Vue.js"],
+                //     "https://github.com/eduardomecchiafernandez/vue-boolzapp"
+                // ),
+
+                // new Project(
+                //     "Eduardo's Task Tracker",
+                //     "A responsive single page application built with Vue.js to familiarize myself with Vue CLI",
+                //     "task-tracker.png",
+                //     "https://eduardomecchiafernandez.github.io/todos/",
+                //     ["HTML", "CSS", "Vue.js"],
+                //     "https://github.com/eduardomecchiafernandez/todos"
+                // )
             ]
         };
     },
