@@ -39,15 +39,17 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ['bootstrap-vue/nuxt'],
 
-  // Bootstrap-Vue configuration
+  // Bootstrap-Vue configuration - disable icons to reduce bundle size
   bootstrapVue: {
     bootstrapCSS: true,
-    bootstrapVueCSS: true
+    bootstrapVueCSS: true,
+    icons: false
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     extractCSS: true,
+    transpile: ['three'],
     optimization: {
       splitChunks: {
         cacheGroups: {
@@ -59,6 +61,10 @@ export default {
           }
         }
       }
-    }
+    },
+    // Reduce memory usage during build
+    parallel: false,
+    cache: false,
+    hardSource: false
   }
 }
