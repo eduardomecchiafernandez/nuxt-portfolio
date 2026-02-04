@@ -230,11 +230,6 @@ export default {
             
             const normalizedInput = this.normalizeText(inputName);
             
-            // DEBUG: Log input
-            console.log('Input:', inputName);
-            console.log('Normalized input:', normalizedInput);
-            console.log('Guest list:', this.invitedGuests);
-
             // Check against guest list (handles both strings and arrays of aliases)
             let matchedGuest = null;
             
@@ -250,9 +245,7 @@ export default {
                     }
                 } else {
                     // Simple string comparison
-                    const normalizedGuest = this.normalizeText(guest);
-                    console.log(`Comparing "${normalizedGuest}" with "${normalizedInput}":`, normalizedGuest === normalizedInput);
-                    if (normalizedGuest === normalizedInput) {
+                    if (this.normalizeText(guest) === normalizedInput) {
                         matchedGuest = guest;
                         break;
                     }

@@ -1,5 +1,12 @@
+[build]
+  command = "npm run generate"
+  publish = "dist"
+
+[build.environment]
+  NODE_OPTIONS = "--max-old-space-size=4096"
+
 [[redirects]]
-      from = "https://eduardomecchia.com"
-      to = "https://eduardomecchiafernandez.com"
-      status = 301
-      force = true
+  from = "https://eduardomecchia.com"
+  to = "https://eduardomecchiafernandez.com"
+  status = 301
+  force = true
