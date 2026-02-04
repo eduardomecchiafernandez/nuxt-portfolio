@@ -161,6 +161,7 @@ export default {
                 "Marco",
                 "Karol",
                 "Dario",
+                "Manuel",
                 "Desirée",
                 ["Eliza", "Elisa"],
                 ["Ana Maria", "Anamaria"],
