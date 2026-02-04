@@ -156,7 +156,7 @@ export default {
                 "Federica",
                 "Alessandra",
                 "Marco",
-                "Carol",
+                ["Carol", "Karol"],
                 "Desirée",
                 ["Eliza", "Elisa"],
                 ["Ana Maria", "Anamaria"],
