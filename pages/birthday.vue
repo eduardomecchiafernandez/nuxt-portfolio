@@ -41,30 +41,16 @@
                 <div v-if="isLoggedIn && !hasResponded" class="birthday__card slide-in-from-left">
                     <div class="birthday__icon">🎉</div>
                     <h1 class="birthday__title">Hey, {{ guestName }}!</h1>
-                    <p class="birthday__subtitle">Will you join the celebration?</p>
+                    <p class="birthday__subtitle">Will you be there?</p>
                     
-                    <div class="birthday__details">
-                        <div class="birthday__detail">
-                            <span class="birthday__detail-icon">📅</span>
-                            <span class="birthday__detail-text">Date TBD</span>
-                        </div>
-                        <div class="birthday__detail">
-                            <span class="birthday__detail-icon">📍</span>
-                            <span class="birthday__detail-text">Location TBD</span>
-                        </div>
-                        <div class="birthday__detail">
-                            <span class="birthday__detail-icon">🕖</span>
-                            <span class="birthday__detail-text">Time TBD</span>
-                        </div>
-                    </div>
-
                     <div class="birthday__actions">
                         <button @click="confirmPresence" class="btn-modern birthday__confirm">
                             <span>Yes, I'll be there!</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                         </button>
-                        <button @click="declineInvitation" class="btn-secondary birthday__decline">
-                            Sorry, I can't make it
+                        <button @click="declineInvitation" class="btn-modern birthday__decline">
+                            <span>Sorry, I can't make it</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                         </button>
                     </div>
                 </div>
@@ -414,10 +400,10 @@ canvas {
     &__decline {
         width: 100%;
         justify-content: center;
-        opacity: 0.7;
+        background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%) !important;
 
         &:hover {
-            opacity: 1;
+            box-shadow: 0 8px 25px rgba(107, 114, 128, 0.4) !important;
         }
     }
 
