@@ -3,12 +3,11 @@
 </template>
 
 <script>
-import * as THREE from 'three';
-
 export default {
     name: 'ThreeScene',
     data() {
         return {
+            THREE: null,
             scene: null,
             camera: null,
             renderer: null,
@@ -18,7 +17,11 @@ export default {
             animationId: null
         }
     },
-    mounted() {
+    async mounted() {
+        // Dynamic import - only loads on client side
+        const THREE = await import('three');
+        this.THREE = THREE;
+
         this.initThree();
         this.createShapes();
         this.animate();
@@ -37,6 +40,7 @@ export default {
     },
     methods: {
         initThree() {
+            const THREE = this.THREE;
             const container = this.$refs.container;
             const width = window.innerWidth;
             const height = window.innerHeight;
@@ -59,6 +63,7 @@ export default {
         },
 
         createShapes() {
+            const THREE = this.THREE;
             const geometries = [
                 new THREE.IcosahedronGeometry(1, 0),
                 new THREE.OctahedronGeometry(1, 0),

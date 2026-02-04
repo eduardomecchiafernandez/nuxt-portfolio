@@ -49,7 +49,6 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     extractCSS: true,
-    transpile: ['three'],
     optimization: {
       splitChunks: {
         cacheGroups: {
@@ -65,6 +64,16 @@ export default {
     // Reduce memory usage during build
     parallel: false,
     cache: false,
-    hardSource: false
+    hardSource: false,
+    // Exclude three.js from babel processing
+    babel: {
+      compact: false
+    },
+    extend(config, { isServer }) {
+      if (isServer) {
+        config.externals = config.externals || [];
+        config.externals.push('three');
+      }
+    }
   }
 }

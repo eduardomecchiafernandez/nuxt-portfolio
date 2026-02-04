@@ -2,7 +2,9 @@
     <!-- App wrapper -->
     <div class="app-wrapper">
         <canvas id="matrix"></canvas>
-        <ThreeScene />
+        <client-only>
+            <ThreeScene />
+        </client-only>
 
         <Navbar />
 

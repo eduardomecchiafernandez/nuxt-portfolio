@@ -1,7 +1,9 @@
 <template>
     <div class="app-wrapper">
         <canvas id="matrix"></canvas>
-        <ThreeScene />
+        <client-only>
+            <ThreeScene />
+        </client-only>
 
         <!-- Hidden form for Netlify to detect -->
         <form name="birthday-rsvp" netlify netlify-honeypot="bot-field" hidden>
