@@ -146,6 +146,7 @@ export default {
                 "Veronica",
                 "Hakim",
                 "Mirko",
+                "Luca",
                 "Andrea",
                 "Mattia",
                 "Sara",
