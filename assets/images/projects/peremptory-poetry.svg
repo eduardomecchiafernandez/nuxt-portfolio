@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a"/>
+      <stop offset="100%" style="stop-color:#1a1a2e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg3)"/>
+  <text x="400" y="160" font-family="Georgia, serif" font-size="24" font-style="italic" fill="rgba(255,255,255,0.5)" text-anchor="middle">"Multilingual, synchronized,</text>
+  <text x="400" y="195" font-family="Georgia, serif" font-size="24" font-style="italic" fill="rgba(255,255,255,0.5)" text-anchor="middle">unexpirable fragments of wisdom"</text>
+  <text x="400" y="280" font-family="Georgia, serif" font-size="36" font-weight="bold" fill="white" text-anchor="middle">Peremptory Poetry</text>
+  <line x1="300" y1="320" x2="500" y2="320" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <text x="400" y="400" font-family="Arial, sans-serif" font-size="12" fill="rgba(255,255,255,0.4)" text-anchor="middle">peremptorypoetry.com</text>
+</svg>

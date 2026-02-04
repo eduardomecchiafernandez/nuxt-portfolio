@@ -163,21 +163,48 @@ export default {
             ],
             projects: [
                 new Project(
-                    "Guess the Number",
-                    "Small application built over the course of a weekend with Electron for the first HR test of my life",
-                    "guess-the-number.png",
-                    "https://drive.google.com/file/d/1USGqq7_gAJyrzaA-ZlHqvfnMFe_EG9gd/view?usp=sharing",
-                    ["HTML", "CSS", "Electron"],
-                    "https://github.com/eduardomecchiafernandez/guess-the-number"
+                    "Akuzaer",
+                    "Dark, immersive portfolio for a sound engineer featuring audio player, music library, and contact form",
+                    "akuzaer.svg",
+                    "https://akuzaer.com/",
+                    ["HTML", "SCSS", "JavaScript"],
+                    "https://github.com/eduardomecchiafernandez/akuzaer"
                 ),
 
                 new Project(
-                    "Eduardo's Task Tracker",
-                    "A responsive single page application built with Vue.js to familiarize myself with Vue CLI and keep track of what I have to watch/read/etc.",
-                    "task-tracker.png",
-                    "https://eduardomecchiafernandez.github.io/todos/",
-                    ["HTML", "CSS", "Vue.js"],
-                    "https://github.com/eduardomecchiafernandez/todos"
+                    "Livia Regoli",
+                    "Modern portfolio with 3D effects for an aspiring computer engineer, blending philosophy and technology",
+                    "liviaregoli.svg",
+                    "https://liviaregoli.netlify.app/",
+                    ["HTML", "SCSS", "JavaScript", "Three.js"],
+                    "https://github.com/eduardomecchiafernandez/liviaregoli"
+                ),
+
+                new Project(
+                    "Cantata Anarchica",
+                    "A tribute website for the self-organized gatherings where thousands sing Fabrizio De André's songs in public squares across Italy and beyond",
+                    "cantata-anarchica.svg",
+                    "https://cantataanarchica.it/",
+                    ["HTML", "SCSS", "JavaScript"],
+                    "https://github.com/eduardomecchiafernandez/cantata-anarchica"
+                ),
+
+                new Project(
+                    "Birreria Marconi 2",
+                    "Bilingual website for a cozy pub in Zagarolo, featuring gallery, reviews integration, and interactive map",
+                    "birreria-marconi.svg",
+                    "https://birreriamarconi2.it/",
+                    ["HTML", "SCSS", "JavaScript"],
+                    "https://github.com/eduardomecchiafernandez/birreria-marconi-2"
+                ),
+
+                new Project(
+                    "Peremptory Poetry",
+                    "Minimalist landing page for a multilingual poetry project with newsletter integration",
+                    "peremptory-poetry.svg",
+                    "https://www.peremptorypoetry.com/",
+                    ["HTML", "CSS", "JavaScript"],
+                    "https://github.com/eduardomecchiafernandez/peremptory-poetry"
                 ),
 
                 new Project(
@@ -196,6 +223,24 @@ export default {
                     "https://edu-boolzapp.netlify.app/",
                     ["HTML", "CSS", "Vue.js"],
                     "https://github.com/eduardomecchiafernandez/vue-boolzapp"
+                ),
+
+                new Project(
+                    "Eduardo's Task Tracker",
+                    "A responsive single page application built with Vue.js to familiarize myself with Vue CLI",
+                    "task-tracker.png",
+                    "https://eduardomecchiafernandez.github.io/todos/",
+                    ["HTML", "CSS", "Vue.js"],
+                    "https://github.com/eduardomecchiafernandez/todos"
+                ),
+
+                new Project(
+                    "Guess the Number",
+                    "Desktop application built with Electron for an HR coding challenge",
+                    "guess-the-number.png",
+                    "https://drive.google.com/file/d/1USGqq7_gAJyrzaA-ZlHqvfnMFe_EG9gd/view?usp=sharing",
+                    ["HTML", "CSS", "Electron"],
+                    "https://github.com/eduardomecchiafernandez/guess-the-number"
                 )
             ]
         };
