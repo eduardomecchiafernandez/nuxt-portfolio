@@ -149,6 +149,7 @@ export default {
                 "Andrea",
                 "Mattia",
                 "Sara",
+                "Rocco",
                 "Sara",
                 "Alberto",
                 "Matteo",
