@@ -51,12 +51,10 @@
                     <div class="birthday__actions">
                         <button @click="confirmPresence" class="btn-modern birthday__confirm">
                             <span>Yes, I'll be there!</span>
-                            &nbsp;
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                         </button>
                         <button @click="declineInvitation" class="btn-modern birthday__decline">
                             <span>Sorry, I can't make it</span>
-                            &nbsp;
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                         </button>
                     </div>
@@ -98,6 +96,7 @@ export default {
     data() {
         return {
             // Guest list - add your 42 invited guests here
+            // ADD CLAUDIA
             invitedGuests: [
                 'Paolo',
                 "Andrea",
@@ -231,6 +230,11 @@ export default {
             
             const normalizedInput = this.normalizeText(inputName);
             
+            // DEBUG: Log input
+            console.log('Input:', inputName);
+            console.log('Normalized input:', normalizedInput);
+            console.log('Guest list:', this.invitedGuests);
+
             // Check against guest list (handles both strings and arrays of aliases)
             let matchedGuest = null;
             
@@ -246,7 +250,9 @@ export default {
                     }
                 } else {
                     // Simple string comparison
-                    if (this.normalizeText(guest) === normalizedInput) {
+                    const normalizedGuest = this.normalizeText(guest);
+                    console.log(`Comparing "${normalizedGuest}" with "${normalizedInput}":`, normalizedGuest === normalizedInput);
+                    if (normalizedGuest === normalizedInput) {
                         matchedGuest = guest;
                         break;
                     }
