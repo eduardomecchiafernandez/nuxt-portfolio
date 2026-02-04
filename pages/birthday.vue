@@ -35,6 +35,11 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                         </button>
                     </form>
+
+                    <a href="tel:+393519839210" class="birthday__help">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        Having trouble? Call Eduardo
+                    </a>
                 </div>
 
                 <!-- Response State -->
@@ -92,18 +97,72 @@ export default {
         return {
             // Guest list - add your 42 invited guests here
             invitedGuests: [
-                'Paolo', 'Marco', 'Luca', 'Giovanni', 'Andrea',
-                'Francesca', 'Giulia', 'Maria', 'Sara', 'Elena',
-                'Alessandro', 'Matteo', 'Lorenzo', 'Davide', 'Simone',
-                'Chiara', 'Valentina', 'Alessia', 'Martina', 'Federica',
-                'Roberto', 'Giuseppe', 'Antonio', 'Stefano', 'Michele',
-                'Anna', 'Laura', 'Silvia', 'Paola', 'Monica',
-                'Fabio', 'Riccardo', 'Daniele', 'Emanuele', 'Tommaso',
-                'Claudia', 'Elisa', 'Roberta', 'Cristina', 'Barbara',
-                'Livia', 'Eduardo'
-                // Add more names as needed
+                'Paolo',
+                "Andrea",
+                "Ilaria",
+                "Simone",
+                "Simone",
+                "Nicolò",
+                "Federico",
+                "Francesco",
+                "Francesco",
+                "Lara",
+                "Emanuele",
+                "Danilo",
+                "Manuel",
+                "Vincenzo",
+                "Emanuelcarlo",
+                "Beatrice",
+                "Claudio",
+                "Ivan",
+                "Giuliano",
+                "Yuri",
+                "Davide",
+                ["Artyom", "Artem"],
+                "Federico",
+                "Vanessa",
+                "Diego",
+                "Livia",
+                "Francesco",
+                "Giovanni",
+                "Aurora",
+                "Martina",
+                "Martina",
+                "Lia",
+                "Diego",
+                "Noemi",
+                "Andrei",
+                "Claudia",
+                "Giosuè",
+                "Giorgia",
+                "Mirko",
+                "Jacopo",
+                "Lorenzo",
+                "Giacomo",
+                "Clarissa",
+                "Luca",
+                "Veronica",
+                "Hakim",
+                "Mattia",
+                "Sara",
+                "Sara",
+                "Alberto",
+                "Matteo",
+                "Christiane",
+                "Federica",
+                "Alessandra",
+                "Marco",
+                "Desirée",
+                ["Eliza", "Elisa"],
+                ["Ana Maria", "Anamaria"],
+                "Valerio",
+                "Morgan",
+                "Beatrice",
+                "Gianmarco",
+                "Davide",
+                "Zoe",
+                "Leonardo"
             ],
-            
             nameInput: '',
             guestName: '',
             isLoggedIn: false,
@@ -147,6 +206,15 @@ export default {
             localStorage.setItem('birthday-rsvp', JSON.stringify(data));
         },
 
+        // Normalize text by removing accents and converting to lowercase
+        normalizeText(text) {
+            return text
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '')
+                .toLowerCase()
+                .trim();
+        },
+
         handleLogin() {
             const inputName = this.nameInput.trim();
             
@@ -155,13 +223,32 @@ export default {
                 return;
             }
             
-            // Case-insensitive check
-            const matchedGuest = this.invitedGuests.find(
-                guest => guest.toLowerCase() === inputName.toLowerCase()
-            );
+            const normalizedInput = this.normalizeText(inputName);
+            
+            // Check against guest list (handles both strings and arrays of aliases)
+            let matchedGuest = null;
+            
+            for (const guest of this.invitedGuests) {
+                if (Array.isArray(guest)) {
+                    // Check all aliases in the array
+                    const match = guest.find(
+                        alias => this.normalizeText(alias) === normalizedInput
+                    );
+                    if (match) {
+                        matchedGuest = guest[0]; // Use the primary name (first in array)
+                        break;
+                    }
+                } else {
+                    // Simple string comparison
+                    if (this.normalizeText(guest) === normalizedInput) {
+                        matchedGuest = guest;
+                        break;
+                    }
+                }
+            }
             
             if (matchedGuest) {
-                this.guestName = matchedGuest; // Use the properly capitalized version
+                this.guestName = matchedGuest;
                 this.isLoggedIn = true;
                 this.errorMessage = '';
             } else {
@@ -389,6 +476,30 @@ canvas {
         margin-top: 8px;
         width: 100%;
         justify-content: center;
+    }
+
+    &__help {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-top: 20px;
+        padding: 8px 16px;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.5);
+        text-decoration: none;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 20px;
+        transition: all 0.3s ease;
+
+        svg {
+            opacity: 0.7;
+        }
+
+        &:hover {
+            color: rgba(255, 255, 255, 0.8);
+            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+        }
     }
 
     &__details {
