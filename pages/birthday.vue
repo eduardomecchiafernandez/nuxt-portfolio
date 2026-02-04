@@ -109,11 +109,44 @@ export default {
             isLoggedIn: false,
             hasResponded: false,
             responseType: null, // 'confirmed' or 'declined'
-            errorMessage: ''
+            errorMessage: '',
+            alreadyVoted: false
         }
     },
 
+    mounted() {
+        this.initMatrix();
+        this.checkPreviousResponse();
+    },
+
     methods: {
+        checkPreviousResponse() {
+            // Check if user has already responded
+            const savedResponse = localStorage.getItem('birthday-rsvp');
+            if (savedResponse) {
+                try {
+                    const data = JSON.parse(savedResponse);
+                    this.guestName = data.name;
+                    this.responseType = data.response;
+                    this.isLoggedIn = true;
+                    this.hasResponded = true;
+                    this.alreadyVoted = true;
+                } catch (e) {
+                    // Invalid data, clear it
+                    localStorage.removeItem('birthday-rsvp');
+                }
+            }
+        },
+
+        saveResponse(name, response) {
+            const data = {
+                name: name,
+                response: response,
+                timestamp: new Date().toISOString()
+            };
+            localStorage.setItem('birthday-rsvp', JSON.stringify(data));
+        },
+
         handleLogin() {
             const inputName = this.nameInput.trim();
             
@@ -166,6 +199,9 @@ export default {
                 console.error('Error submitting response:', error);
                 // Still show success to user even if submission fails
             }
+            
+            // Save to localStorage to prevent duplicate submissions
+            this.saveResponse(this.guestName, response);
         },
 
         initMatrix() {
@@ -220,10 +256,6 @@ export default {
 
             setInterval(draw, 35);
         }
-    },
-
-    mounted() {
-        this.initMatrix();
     },
     
     head() {
