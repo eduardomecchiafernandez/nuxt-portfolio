@@ -1,19 +1,24 @@
 {
   "name": "nuxt-portfolio",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "nuxt",
+    "dev": "nuxt dev",
     "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "core-js": "^3.15.1",
-    "nuxt": "^2.15.8"
+    "nuxt": "^3.14.0",
+    "vue": "^3.5.0",
+    "vue-router": "^4.4.0",
+    "three": "^0.170.0"
   },
   "devDependencies": {
-    "sass": "^1.47.0",
-    "sass-loader": "^10.2.0"
+    "@nuxtjs/google-fonts": "^3.2.0",
+    "sass": "^1.80.0",
+    "typescript": "^5.6.0"
   }
 }

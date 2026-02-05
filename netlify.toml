@@ -1,9 +1,9 @@
 [build]
   command = "npm run generate"
-  publish = "dist"
+  publish = ".output/public"
 
 [build.environment]
-  NODE_OPTIONS = "--max-old-space-size=8192"
+  NODE_VERSION = "20"
 
 [[redirects]]
   from = "https://eduardomecchia.com"
