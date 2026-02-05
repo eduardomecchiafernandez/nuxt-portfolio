@@ -165,6 +165,7 @@ export default {
                 "Valerio",
                 "Giorgio",
                 "Giorgio",
+                "Gabriele",
                 "Nicole",
                 "Francesco",
                 "Mirko",
