@@ -162,6 +162,7 @@ export default {
                 "Karol",
                 "Dario",
                 "Manuel",
+                "Valerio",
                 "Giorgio",
                 "Giorgio",
                 "Nicole",
