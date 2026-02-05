@@ -7,12 +7,11 @@
     >
         <a :href="project.url" target="_blank" class="project-card__image-link">
             <div class="project-card__image-wrapper">
-                <b-img 
-                    fluid 
+                <img
                     :src="require('~/assets/images/projects/' + project.image)" 
                     :alt="'Project image for ' + project.name"
                     class="project-card__image"
-                ></b-img>
+                />
                 <div class="project-card__image-overlay">
                     <span class="view-project">View Project</span>
                 </div>

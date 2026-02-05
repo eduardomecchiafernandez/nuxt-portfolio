@@ -37,14 +37,7 @@ export default {
   buildModules: [],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['bootstrap-vue/nuxt'],
-
-  // Bootstrap-Vue configuration - disable icons to reduce bundle size
-  bootstrapVue: {
-    bootstrapCSS: true,
-    bootstrapVueCSS: true,
-    icons: false
-  },
+  modules: [],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

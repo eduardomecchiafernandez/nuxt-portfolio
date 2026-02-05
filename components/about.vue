@@ -28,12 +28,11 @@
             <figure class="photo-wrapper">
                 <div class="photo-glow"></div>
                 <div class="photo-frame">
-                    <b-img
+                    <img
                         src="~/assets/images/playa-tora-paguera.png"
                         class="photo"
-                        fluid
                         alt="Photo of Eduardo Mecchia Fernandez looking at the ocean in Playa Tora, Paguera, Mallorca."
-                    ></b-img>
+                    />
                 </div>
             </figure>
         </article>
