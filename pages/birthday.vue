@@ -113,7 +113,7 @@ const invitedGuests: (string | string[])[] = [
   'Federica', 'Alessandra', 'Marco', 'Karol', 'Dario', 'Manuel', 'Valerio', 'Giorgio',
   'Giorgio', 'Gabriele', 'Nicole', 'Francesco', 'Mirko', 'Gabriele', 'Federico', 'Desirée',
   ['Eliza', 'Elisa'], ['Ana Maria', 'Anamaria'], 'Valerio', 'Morgan', 'Beatrice', 'Riccardo',
-  'Gianmarco', 'Davide', 'Zoe', 'Leonardo', 'Giulia', 'Roberto', 'Christian', 'Robert', 'Martina', 'Francesco', 'Luca', 'Gabriele', 'Gabriel'
+  'Gianmarco', 'Davide', 'Zoe', 'Leonardo', 'Giulia', 'Roberto', 'Christian', 'Robert', 'Martina', 'Francesco', 'Luca', 'Gabriele', 'Gabriel', 'Alessio', 'Claudia'
 ]
 
 const nameInput = ref('')
